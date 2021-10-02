@@ -16,21 +16,29 @@ export default function App() {
   
   const [dados, setDados] = useState([])
 
-  const [contador, setContador] = useState(0)
 
     function armazenarDados (fabricante, descricao){
 
-    setContador(contador + 1)
+      if(fabricante ==="" || descricao === "")
+        return
+      
+      else{
     const item = {fabricante, descricao}
     setDados([...dados, item])
+        }
 
     {/* nao funciona
+          setContador(contador + 1)
+
     setDados (dados => {
       let aux = [...dados, {key: contador.toString(), value: item} ]
       console.log(aux)
 
       return aux
-    })*/}
+    })
+    const [contador, setContador] = useState(0)
+
+  */}
 
   }
 
